@@ -82,8 +82,10 @@ body.dark .sidebar {
     box-shadow: 0px 0px 15px #000;
 }
 
-/* Botones generales */
-.reset-btn, .back-btn, .menu-btn {
+/* ======== BOTONES GENERALES ======== */
+.reset-btn,
+.back-btn,
+.menu-btn {
     width: 100%;
     padding: 12px;
     font-size: 16px;
@@ -96,7 +98,9 @@ body.dark .sidebar {
     transition: 0.3s;
 }
 
-.reset-btn:hover, .back-btn:hover, .menu-btn:hover {
+.reset-btn:hover,
+.back-btn:hover,
+.menu-btn:hover {
     background: #3a6ce0;
 }
 
@@ -132,7 +136,7 @@ body.dark .menu-container {
     margin-bottom: 20px;
 }
 
-/* ======= BOTÓN DE TEMA ======= */
+/* ======== BOTÓN DE TEMA ======== */
 .theme-btn {
     position: absolute;
     top: 15px;
@@ -221,6 +225,7 @@ body.dark .close:hover {
 
 /* ======== MEDIA QUERIES PARA CELULAR (<600px) ======== */
 @media (max-width: 600px) {
+
     /* Contenedor */
     .container {
         flex-direction: column;
@@ -278,3 +283,4 @@ body.dark .close:hover {
         padding: 20px;
     }
 }
+
