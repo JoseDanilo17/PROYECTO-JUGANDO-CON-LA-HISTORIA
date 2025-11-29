@@ -226,45 +226,49 @@ body.dark .close:hover {
 
 /* ======== MEDIA QUERIES PARA CELULAR (<600px) ======== */
 @media (max-width: 600px) {
-
-    /* Contenedor */
+    /* Contenedor principal */
     .container {
+        display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: center; /* centrado vertical y horizontal */
-        margin-top: 20px;
+        align-items: center;       /* centra horizontal */
+        justify-content: flex-start; /* mantiene top-alineado */
         width: 100%;
-    }
-
-    /* Sidebar debajo del grid */
-    .sidebar {
-        width: 90%;
-        margin: 20px auto 0 auto; /* margen superior y centrado */
+        margin: 20px auto;
     }
 
     /* Grid */
     .grid {
-        grid-template-columns: repeat(12, 1fr); /* adaptativo móvil */
+        display: grid;
+        grid-template-columns: repeat(12, 1fr); /* 12 columnas adaptables */
         gap: 3px;
-        margin: 0 auto; /* centra horizontalmente */
-        width: 90%;
+        width: 90%;        /* ocupa el 90% del ancho del contenedor */
+        margin: 0 auto;    /* centra horizontal */
     }
 
     .grid div {
-        aspect-ratio: 1; /* mantiene cuadrado */
+        aspect-ratio: 1;   /* mantiene cuadrado */
         font-size: 14px;
     }
 
-    /* Menú */
+    /* Sidebar debajo del grid */
+    .sidebar {
+        width: 90%;        /* ocupa el 90% del ancho */
+        margin: 20px auto 0 auto; /* margen superior y centrado */
+        text-align: center; /* centra el contenido interno */
+    }
+
+    /* Menú principal */
     .menu-container {
         width: 90%;
         padding: 30px 20px;
-        margin: 0 auto; /* centrado */
+        margin: 0 auto;    /* centrado horizontal */
+        text-align: center;
     }
 
     .menu-btn {
         font-size: 16px;
         padding: 12px;
+        margin: 10px 0; /* espacio entre botones */
     }
 
     .theme-btn {
@@ -280,3 +284,4 @@ body.dark .close:hover {
         padding: 20px;
     }
 }
+
