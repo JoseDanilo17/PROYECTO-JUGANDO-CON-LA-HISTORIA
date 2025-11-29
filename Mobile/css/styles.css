@@ -229,7 +229,7 @@ body.dark .close:hover {
     /* Contenedor principal */
     .container {
         display: flex;
-        flex-direction: column;
+        flex-direction: column; /* Apila Grid arriba y Sidebar abajo */
         align-items: center; 	 /* centra horizontal */
         justify-content: flex-start; /* mantiene top-alineado */
         width: 100%;
@@ -243,7 +243,7 @@ body.dark .close:hover {
         gap: 3px;
         width: 90%; 	/* ocupa el 90% del ancho del contenedor */
         margin: 0 auto; /* centra horizontal */
-        margin-right: 0; /* <<-- CORRECCIÓN: ELIMINAR MARGEN DE ESCRITORIO */
+        margin-right: 0; /* CORRECCIÓN: Elimina el margen derecho de PC */
     }
 
     .grid div {
