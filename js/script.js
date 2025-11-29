@@ -25,7 +25,7 @@ window.onload = () => {
 // Guardar nivel y cargar juego
 function startGame(level) {
     localStorage.setItem("nivel", level);
-    window.location.href = "index.html";
+    window.location.href = "GameSo.html";
 }
 
 // ======== PERFIL ========
