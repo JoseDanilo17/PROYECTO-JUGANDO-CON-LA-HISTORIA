@@ -36,7 +36,7 @@ body.dark {
     display: grid;
     grid-template-columns: repeat(12, 40px); /* PC */
     gap: 5px;
-    margin-right: 40px;
+    margin-right: 40px; /* Margen para PC */
 }
 
 .grid div {
@@ -230,7 +230,7 @@ body.dark .close:hover {
     .container {
         display: flex;
         flex-direction: column;
-        align-items: center;       /* centra horizontal */
+        align-items: center; 	 /* centra horizontal */
         justify-content: flex-start; /* mantiene top-alineado */
         width: 100%;
         margin: 20px auto;
@@ -241,18 +241,19 @@ body.dark .close:hover {
         display: grid;
         grid-template-columns: repeat(12, 1fr); /* 12 columnas adaptables */
         gap: 3px;
-        width: 90%;        /* ocupa el 90% del ancho del contenedor */
-        margin: 0 auto;    /* centra horizontal */
+        width: 90%; 	/* ocupa el 90% del ancho del contenedor */
+        margin: 0 auto; /* centra horizontal */
+        margin-right: 0; /* <<-- CORRECCIÓN: ELIMINAR MARGEN DE ESCRITORIO */
     }
 
     .grid div {
-        aspect-ratio: 1;   /* mantiene cuadrado */
+        aspect-ratio: 1; /* mantiene cuadrado */
         font-size: 14px;
     }
 
     /* Sidebar debajo del grid */
     .sidebar {
-        width: 90%;        /* ocupa el 90% del ancho */
+        width: 90%; 	 /* ocupa el 90% del ancho */
         margin: 20px auto 0 auto; /* margen superior y centrado */
         text-align: center; /* centra el contenido interno */
     }
@@ -261,7 +262,7 @@ body.dark .close:hover {
     .menu-container {
         width: 90%;
         padding: 30px 20px;
-        margin: 0 auto;    /* centrado horizontal */
+        margin: 0 auto; 	/* centrado horizontal */
         text-align: center;
     }
 
@@ -284,4 +285,3 @@ body.dark .close:hover {
         padding: 20px;
     }
 }
-
