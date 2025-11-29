@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil del Estudiante</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <div class="menu-container">
+
+        <h1 class="title">Perfil del Estudiante</h1>
+
+        <div class="stats-box">
+            <h2>Estadísticas</h2>
+            <p><strong>Palabras encontradas:</strong> <span id="stats-words">0</span></p>
+            <p><strong>Tiempo total jugado:</strong> <span id="stats-time">0 min</span></p>
+            <p><strong>Niveles completados:</strong> <span id="stats-levels">0</span></p>
+        </div>
+
+        <button class="menu-btn danger" onclick="reiniciarProgreso()">
+            Reiniciar Progreso
+        </button>
+
+        <button class="menu-btn secondary" onclick="window.location.href='menu.html'">
+            Volver
+        </button>
+
+        <button id="toggleDark" class="darkmode-btn">🌙</button>
+    </div>
+
+<script>
+    // --- Cargar estadísticas guardadas ---
+    document.getElementById("stats-words").textContent =
+        localStorage.getItem("palabrasEncontradas") || 0;
+
+    document.getElementById("stats-time").textContent =
+        (localStorage.getItem("tiempoJugado") || 0) + " min";
+
+    document.getElementById("stats-levels").textContent =
+        localStorage.getItem("nivelesCompletados") || 0;
+
+    function reiniciarProgreso() {
+        if (confirm("¿Seguro que quieres borrar todo tu progreso?")) {
+            localStorage.clear();
+            location.reload();
+        }
+    }
+</script>
+
+<script src="js/script.js"></script>
+</body>
+</html>

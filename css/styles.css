@@ -1,0 +1,283 @@
+/* ======== ESTILOS GENERALES ======== */
+body {
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+    margin: 0;
+    padding: 0;
+    transition: background 0.3s, color 0.3s;
+}
+
+body.dark {
+    background: #121212;
+    color: white;
+}
+
+/* ======== TÍTULO ======== */
+.title {
+    text-align: center;
+    margin-top: 60px;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+/* ======== CONTENEDOR PRINCIPAL ======== */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 40px;
+    max-width: 1200px; /* Limita ancho para PC */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ======== GRID (SOPA DE LETRAS) ======== */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, 40px); /* fijo en PC */
+    gap: 5px;
+    margin-right: 40px;
+}
+
+.grid div {
+    width: 40px;
+    height: 40px;
+    background: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.25s;
+}
+
+body.dark .grid div {
+    background: #2c2c2c;
+    color: #fff;
+}
+
+.grid div.selected {
+    background: #f5d142;
+}
+
+.grid div.found {
+    background: #1fa84c !important;
+    color: white;
+}
+
+/* ======== SIDEBAR ======== */
+.sidebar {
+    width: 260px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px #ccc;
+    transition: 0.3s;
+}
+
+body.dark .sidebar {
+    background: #222;
+    color: white;
+    box-shadow: 0px 0px 15px #000;
+}
+
+.reset-btn, .back-btn, .menu-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+    border: none;
+    border-radius: 10px;
+    background: #4b81ff;
+    color: white;
+    transition: 0.3s;
+}
+
+.reset-btn:hover, .back-btn:hover, .menu-btn:hover {
+    background: #3a6ce0;
+}
+
+/* ======== MENÚ PRINCIPAL ======== */
+.menu-bg {
+    background: linear-gradient(120deg, #6ab7ff, #b39ddb);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-container {
+    background: white;
+    padding: 40px;
+    width: 400px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 0 20px #0004;
+}
+
+body.dark .menu-container {
+    background: #222;
+    color: white;
+}
+
+.menu-title {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.menu-subtitle {
+    margin-bottom: 20px;
+}
+
+/* ======= BOTÓN DE TEMA ======= */
+.theme-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #222;
+    color: white;
+    border: none;
+    font-size: 24px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+body.dark .theme-btn {
+    background: #f2f2f2;
+    color: black;
+}
+
+body.dark .grid div.selected {
+    background: #ffdd57 !important;
+    color: black !important;
+    box-shadow: 0 0 10px #ffdd57;
+}
+
+body:not(.dark) .grid div.selected {
+    background: #f5d142 !important;
+    color: black !important;
+    box-shadow: 0 0 10px #f5d142;
+}
+
+/* ======== MODAL DE PERFIL ======== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 0 20px #0004;
+}
+
+body.dark .modal-content {
+    background-color: #222;
+    color: white;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #000;
+}
+
+body.dark .close:hover {
+    color: #fff;
+}
+
+#totalFoundWordsList {
+    text-align: left;
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+/* ======== MEDIA QUERIES PARA CELULAR (<600px) ======== */
+@media (max-width: 600px) {
+    /* Contenedor */
+    .container {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    /* Sidebar debajo del grid */
+    .sidebar {
+        width: 90%;
+        margin-top: 20px;
+    }
+
+    /* Grid */
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr); /* adaptativo móvil */
+        gap: 5px;
+        margin-right: 0;
+        width: 90%;
+    }
+
+    .grid div {
+        padding-top: 100%; /* mantener cuadrado */
+    }
+
+    .grid div span {
+        font-size: 0.9rem;
+    }
+
+    /* Menú */
+    .menu-container {
+        width: 90%;
+        padding: 30px 20px;
+    }
+
+    .menu-btn {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .theme-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    #profileBtn {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+        right: 60px;
+    }
+
+    /* Modal */
+    .modal-content {
+        margin: 20% auto;
+        width: 95%;
+        padding: 20px;
+    }
+}

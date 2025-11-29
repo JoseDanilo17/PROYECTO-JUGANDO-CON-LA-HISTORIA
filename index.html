@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Jugando con la Historia</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" defer></script>
+    <script src="js/game.js" defer></script>
+</head>
+<body>
+
+    <!-- Botón de modo oscuro -->
+    <button class="theme-btn" onclick="toggleTheme()">
+        <span id="themeIcon">🌙</span>
+    </button>
+
+    <h1 class="title">Jugando con la Historia</h1>
+
+    <div class="container">
+        <!-- Área del juego -->
+        <div id="grid" class="grid"></div>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h2>Palabras a encontrar</h2>
+            <ul id="wordList"></ul>
+
+            <h3>Opciones</h3>
+
+            <br><br>
+            <button onclick="window.location.href='menu.html'" class="back-btn">🏠 Menú</button>
+        </div>
+    </div>
+
+</body>
+</html>
