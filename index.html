@@ -2,77 +2,33 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Menú - Jugando con la Historia</title>
+    <title>Jugando con la Historia</title>
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/script.js" defer></script>
+    <script src="js/game.js" defer></script>
 </head>
+<body>
 
-<body class="menu-bg">
-
-    <!-- Botón de modo oscuro -->
-    <button id="themeToggleBtn" class="theme-btn" onclick="toggleTheme()">
+    <!-- Botón de cambio de tema -->
+    <button class="theme-btn" onclick="toggleTheme()">
         <span id="themeIcon">🌙</span>
     </button>
 
-    <!-- Botón de perfil -->
-    <button id="profileBtn" class="theme-btn" onclick="openProfileModal()">👤</button>
+    <h1 class="title">Jugando con la Historia</h1>
 
-    <div class="menu-container">
-        <h1 class="menu-title">🎮 Jugando con la Historia</h1>
-        <p class="menu-subtitle">Explora culturas indígenas mientras aprendes</p>
+    <div class="container">
+        <!-- Área del juego -->
+        <div id="grid" class="grid"></div>
 
-        <button class="menu-btn" onclick="startGame('facil')">Nivel Fácil</button>
-        <button class="menu-btn" onclick="startGame('medio')">Nivel Medio</button>
-        <button class="menu-btn" onclick="startGame('dificil')">Nivel Difícil</button>
-    </div>
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h2>Palabras a encontrar</h2>
+            <ul id="wordList"></ul>
 
-    <!-- Modal de perfil -->
-    <div id="profileModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeProfileModal()">&times;</span>
-            <h2>📊 Estadísticas</h2>
-            <p>Total de palabras encontradas:</p>
-            <ul id="totalFoundWordsList"></ul>
-            <button class="reset-btn" onclick="resetStats()">🔄 Reiniciar estadísticas</button>
+            <h3>Opciones</h3>
+            <button class="back-btn" onclick="window.location.href='menu.html'">🏠 Menú</button>
         </div>
     </div>
-
-    <script>
-        // Abrir modal
-        function openProfileModal() {
-            const modal = document.getElementById("profileModal");
-            modal.style.display = "block";
-
-            // Cargar palabras encontradas
-            const saved = JSON.parse(localStorage.getItem("foundWords") || "[]");
-            const ul = document.getElementById("totalFoundWordsList");
-            ul.innerHTML = "";
-            saved.forEach(word => {
-                const li = document.createElement("li");
-                li.textContent = word;
-                ul.appendChild(li);
-            });
-        }
-
-        // Cerrar modal
-        function closeProfileModal() {
-            document.getElementById("profileModal").style.display = "none";
-        }
-
-        // Reiniciar estadísticas
-        function resetStats() {
-            localStorage.removeItem("foundWords");
-            document.getElementById("totalFoundWordsList").innerHTML = "";
-        }
-
-        // Cerrar modal si se hace click fuera del contenido
-        window.onclick = function(event) {
-            const modal = document.getElementById("profileModal");
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    </script>
 
 </body>
 </html>
