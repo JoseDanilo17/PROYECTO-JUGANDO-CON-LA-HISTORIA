@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Menú - Mobile</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body class="menu-bg">
+
+    <!-- Botón de modo oscuro -->
+    <button id="themeToggleBtn" class="theme-btn" onclick="toggleTheme()">
+        <span id="themeIcon">🌙</span>
+    </button>
+
+    <div class="menu-container">
+        <h1 class="menu-title">🎮 Jugando con la Historia</h1>
+        <p class="menu-subtitle">Explora culturas indígenas mientras aprendes</p>
+
+        <button class="menu-btn" onclick="startGame('facil')">Nivel Fácil</button>
+        <button class="menu-btn" onclick="startGame('medio')">Nivel Medio</button>
+        <button class="menu-btn" onclick="startGame('dificil')">Nivel Difícil</button>
+    </div>
+
+</body>
+</html>
